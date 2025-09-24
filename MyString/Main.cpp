@@ -47,30 +47,48 @@ int main()
 	//cout << "Compare dog/cat: " << b.MyStrCmp(a) << endl;
 	//cout << "Compare cat/cat: " << a.MyStrCmp(a) << endl;
 
-	cout << "\nObject counter\n";
-	cout << "Number of objects now: " << MyString::GetCount() << endl;
+	//cout << "\nObject counter\n";
+	//cout << "Number of objects now: " << MyString::GetCount() << endl;
 
-	MyString obj6("1");
-	MyString obj7("2");
+	//MyString obj6("1");
+	//MyString obj7("2");
 
-	cout << "Number of objects now: " << MyString::GetCount() << endl;
+	//cout << "Number of objects now: " << MyString::GetCount() << endl;
 
-	cout << "\nOperator Overloading\n";
+	//cout << "\nOperator Overloading\n";
+
+	//MyString a("Hello");
+	//MyString b(" world");
+
+	//MyString c = a + b;
+	//c.Print();
+
+	//MyString c1 = a + " world";
+	//c1.Print();
+
+	//MyString c2 = a - 'l';
+	//c2.Print();
+
+	//MyString d = a - "lo";
+	//d.Print();
 
 	MyString a("Hello");
-	MyString b(" world");
+	MyString b("world");
 
-	MyString c = a + b;
-	c.Print();
+	a++;
+	a.Print();
 
-	MyString c1 = a + " world";
-	c1.Print();
+	a--;
+	a.Print();
 
-	MyString c2 = a - 'l';
-	c2.Print();
+	a += "world";
+	a.Print();
 
-	MyString d = a - "lo";
-	d.Print();
+	a -= "lo";
+	a.Print();
+
+	cout << (a == b ? "Equal\n" : "Not equal\n");
+	cout << (a > b ? "a > b\n" : "a <= b\n");
 
 	return 0;
 }

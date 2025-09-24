@@ -28,4 +28,14 @@ public:
 	MyString operator+(const char* b);
 	MyString operator-(char c);
 	MyString operator-(const char* s);
+
+	MyString operator++(int);
+	MyString operator--(int);
+
+	MyString& operator+=(const char* s);
+	MyString& operator-=(const char* s);
+
+	bool operator==(const MyString& obj) const;
+	bool operator>(const MyString& obj) const;
+	bool operator<(const MyString & obj) const;
 };

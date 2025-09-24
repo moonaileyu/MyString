@@ -219,4 +219,67 @@ MyString MyString::operator-(const char* s)
 	return result;
 }
 
+MyString MyString::operator++(int)
+{
+	char* newStr = new char[length + 2];
+	strcpy_s(newStr, length + 1, str);
+
+	newStr[length] = ' ';
+	newStr[length + 1] = '\0';
+
+	delete[] str;
+	str = newStr;
+	length++;
+
+	return *this;
+}
+
+MyString MyString::operator--(int)
+{
+	if (length > 0)
+	{
+		str[length - 1] = '\0';
+		length--;
+	}
+
+	return *this;
+}
+
+MyString& MyString::operator+=(const char* s)
+{
+	int newLen = length + strlen(s);
+	char* newStr = new char[newLen + 1];
+
+	strcpy_s(newStr, length + 1, str);
+	strcat_s(newStr, newLen + 1, s);
+
+	delete[] str;
+	str = newStr;
+	length = newLen;
+
+	return *this;
+}
+
+MyString& MyString::operator-=(const char* s)
+{
+	*this = *this - s;
+
+	return *this;
+}
+
+bool MyString::operator==(const MyString& obj) const
+{
+	return strcmp(str, obj.str) == 0;
+}
+
+bool MyString::operator>(const MyString& obj) const
+{
+	return strcmp(str, obj.str) > 0;
+}
+
+bool MyString::operator<(const MyString& obj) const
+{
+	return strcmp(str, obj.str) < 0;
+}
+
 int MyString::count = 0;
