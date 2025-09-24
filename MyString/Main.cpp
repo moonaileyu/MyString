@@ -40,12 +40,37 @@ int main()
 	cout << "After deletion: ";
 	obj3.Print();
 
-	cout << "\nMyStrCmp\n";
-	MyString a("cat");
-	MyString b("dog");
-	cout << "Compare cat/dog: " << a.MyStrCmp(b) << endl;
-	cout << "Compare dog/cat: " << b.MyStrCmp(a) << endl;
-	cout << "Compare cat/cat: " << a.MyStrCmp(a) << endl;
+	//cout << "\nMyStrCmp\n";
+	//MyString a("cat");
+	//MyString b("dog");
+	//cout << "Compare cat/dog: " << a.MyStrCmp(b) << endl;
+	//cout << "Compare dog/cat: " << b.MyStrCmp(a) << endl;
+	//cout << "Compare cat/cat: " << a.MyStrCmp(a) << endl;
+
+	cout << "\nObject counter\n";
+	cout << "Number of objects now: " << MyString::GetCount() << endl;
+
+	MyString obj6("1");
+	MyString obj7("2");
+
+	cout << "Number of objects now: " << MyString::GetCount() << endl;
+
+	cout << "\nOperator Overloading\n";
+
+	MyString a("Hello");
+	MyString b(" world");
+
+	MyString c = a + b;
+	c.Print();
+
+	MyString c1 = a + " world";
+	c1.Print();
+
+	MyString c2 = a - 'l';
+	c2.Print();
+
+	MyString d = a - "lo";
+	d.Print();
 
 	return 0;
 }
