@@ -283,3 +283,22 @@ bool MyString::operator<(const MyString& obj) const
 }
 
 int MyString::count = 0;
+
+istream& operator>>(istream& in, MyString& obj)
+{
+	char buffer[256];
+	in.getline(buffer, 256);
+
+	delete[] obj.str;
+	obj.length = strlen(buffer);
+	obj.str = new char[obj.length + 1];
+	strcpy_s(obj.str, obj.length + 1, buffer);
+
+	return in;
+}
+
+ostream& operator<<(ostream& out, const MyString& obj)
+{
+	out << obj.str;
+	return out;
+}

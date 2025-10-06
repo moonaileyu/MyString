@@ -90,5 +90,10 @@ int main()
 	cout << (a == b ? "Equal\n" : "Not equal\n");
 	cout << (a > b ? "a > b\n" : "a <= b\n");
 
+	MyString inputStr;
+	cout << "\nEnter a string: ";
+	cin >> inputStr;
+	cout << "You entered: " << inputStr << endl;
+
 	return 0;
 }

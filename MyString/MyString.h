@@ -38,4 +38,7 @@ public:
 	bool operator==(const MyString& obj) const;
 	bool operator>(const MyString& obj) const;
 	bool operator<(const MyString & obj) const;
+
+	friend istream& operator>>(istream& in, MyString& obj);
+	friend ostream& operator<<(ostream& out, const MyString& obj);
 };
