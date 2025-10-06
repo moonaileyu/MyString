@@ -95,5 +95,8 @@ int main()
 	cin >> inputStr;
 	cout << "You entered: " << inputStr << endl;
 
+	MyString fromList = { 'H', 'e', 'l', 'l', 'o', '!' };
+	cout << "String from initializer_list: " << fromList << endl;
+
 	return 0;
 }

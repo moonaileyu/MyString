@@ -1,5 +1,6 @@
 #include "MyString.h"
 #include <iostream>
+#include <initializer_list>
 using namespace std;
 
 MyString::MyString()
@@ -29,6 +30,21 @@ MyString::MyString(const MyString& obj1)
 	length = obj1.length;
 	str = new char[length + 1];
 	strcpy_s(str, length + 1, obj1.str);
+	count++;
+}
+
+MyString::MyString(std::initializer_list<char> list)
+{
+	length = static_cast<int>(list.size());
+	str = new char[length + 1];
+
+	int i = 0;
+	for (char c : list)
+	{
+		str[i++] = c;
+	}
+
+	str[length] = '\0';
 	count++;
 }
 

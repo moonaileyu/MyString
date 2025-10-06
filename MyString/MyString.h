@@ -1,4 +1,6 @@
 #pragma once
+#include <initializer_list> 
+
 class MyString
 {
 private:
@@ -11,6 +13,7 @@ public:
 	MyString(int size);
 	MyString(const char* st);
 	MyString(const MyString& obj1);
+	MyString(std::initializer_list<char> list);
 	~MyString();
 
 	void Print();
